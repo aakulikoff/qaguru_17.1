@@ -12,8 +12,11 @@ public class GithubTest {
         Selenide.open("https://github.com/");
         $(".header-search-button").click();
         $("#query-builder-test").val("Selenide").pressEnter();
-        $(".repo-list").shouldHave(text("selenide/selenide"));
+        $("[data-testid=results-list]").shouldHave(text("selenide/selenide"));
         $(byLinkText("selenide/selenide")).click();
+        $("#wiki-tab").click();
+        $(byText("Soft assertions")).shouldBe(Condition.visible).click();
+        $(".markdown-body").shouldHave(text("Using JUnit5 extend test class"));
     }
 
     @Test
