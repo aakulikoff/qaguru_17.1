@@ -5,7 +5,7 @@ import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.*;
 import static com.codeborne.selenide.Selenide.*;
 
-public class GithubTest {
+public class GithubSearchTest {
 
     @Test
     void successfulGitHubSearchTest1() {
