@@ -1,3 +1,4 @@
+import com.codeborne.selenide.Selenide;
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Condition.*;
@@ -15,8 +16,8 @@ public class DragAndDropTest {
         $("#column-a").shouldHave(text("A"));
         $("#column-b").shouldHave(text("B"));
         $("#column-a").dragAndDropTo("#column-b");
-//        Selenide.actions().dragAndDrop($("#column-a"),$("#column-b"));
+        Selenide.actions().dragAndDrop($("#column-a"),$("#column-b"));
         $("#column-a").shouldHave(text("B"));
-        $("#column-b").shouldHave(text("A"));
+        $(("#column-b")).shouldHave(text("A"));
     }
 }
